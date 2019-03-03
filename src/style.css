@@ -1,0 +1,61 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+#header{
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: auto;
+  width: 100vw;
+  background-image: url("./space.jpg");
+}
+
+h1{
+    align-self: center;
+
+    padding: 50px;
+    color:  #f3f8ff;
+    font-size: 50px;
+    font-family: 'Orbitron', sans-serif;
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+}
+
+#appMount{
+    background: #f3f8ff;
+    overflow: hidden;
+    width: 100vw;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+#info{
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+}
+p{
+    font-family:'ZCOOL QingKe HuangYou', cursive;
+    padding: 10px;
+    font-size: 20px;
+}
+
+button, input{
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    border: black solid 2px;
+    background-color: #ff5959;
+}
+
+img{
+    align-self: center;
+    width:50%;
+    height:auto;
+    background: black;
+}
