@@ -17,7 +17,6 @@ body{
 
 h1{
     align-self: center;
-
     padding: 50px;
     color:  #f3f8ff;
     font-size: 50px;
@@ -54,7 +53,7 @@ button, input{
 }
 
 img{
-    align-self: center;
+    /* align-self: center; */
     width:50%;
     height:auto;
     background: black;

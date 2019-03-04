@@ -2,22 +2,20 @@ import React from 'react';
 import axios from 'axios';
 import {clearMessage,translateMessage,errorInTranslation,newMessage,loadMessage} from  './actions';
 import { connect } from 'react-redux';
+
 import king from './king.webp';
-// export default   removed when redux entered
+import uhura_gif from './uhura.webp';
 class Communicator extends React.Component {
-/*  constructor(props) {
-    super(props);
-    this.state = {message: this.props.message};
-}*/
+
 
 componentDidMount(){
-        const initMessage = "They called the Enterprise a garbage scow!";
+    const initMessage = "They called the Enterprise a garbage scow!";
     this.props.dispatch(loadMessage(initMessage))
 
 }
   resetComm() {
       this.props.dispatch(clearMessage())
-    //this.setState({message: '', uhura:"hidden", error:'hidden'});
+
   }
 
   translate(message){
@@ -31,10 +29,7 @@ componentDidMount(){
 
       }).catch( err=> {
            this.props.dispatch(errorInTranslation());
-        /*  this.setState({
-              translation: "noData",
-              error:"visible"
-          })*/
+
           console.log("error  in request", err);
       });
   }
@@ -42,15 +37,15 @@ componentDidMount(){
 
   updateComm(message) {
       this.props.dispatch(newMessage(message))
-/*    this.setState({
-      message
-  });*/
+
   }
 
   render() {
     const { message, translation,error, uhura } = this.props;
+
     return<div id="info">
-    <p>Scotty is in a fight with some Klingons, but you can control what he says and let Uhara translate it!  </p>
+
+    <p>You are on board the Enterprise and you see Scotty in a fight with some Klingons. You can control what he says and let Uhura translate it!  </p>
       <input onChange={event => this.updateComm(event.target.value)}
          value={message|| " "}    />
       <p>Scotty: {message}</p>
@@ -62,9 +57,8 @@ componentDidMount(){
       </button>
     {uhura==='visible' && <p>Uhura: {translation}</p>}
     {uhura==='visible' && <img src={king} alt="klingon " />}
-
-
-    {translation==='noData'&& uhura==='hidden' && error==='visible'&&<p> To many requests </p>}
+    {translation==='noData'&& uhura==='hidden' && error==='visible'&&<p> To many requests </p> }
+    {translation==='noData'&& uhura==='hidden' && error==='visible'&&<img src={uhura_gif} alt="uhura speaking " />}
     </div>;
 
   }
@@ -72,19 +66,17 @@ componentDidMount(){
 
 
 function mapStateToProps(state) {
-    console.log("state from app", state);
+console.log("state from app", state);
 
-    var message =state.message;
+var message =state.message;
 var translation=state.translation;
 var error= state.error;
 var uhura =state.uhura
     return {
-
         message: message,
         translation: translation,
         error: error,
         uhura:uhura
-
     };
 }
 
