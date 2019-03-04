@@ -45,7 +45,7 @@ componentDidMount(){
 
     return<div id="info">
 
-    <p>You are on board the Enterprise and you see Scotty in a fight with some Klingons. You can control what he says and let Uhura translate it!  </p>
+    <p>You are on board the Enterprise and you see Scotty in a discussion with a klingon. You can control what he says and let Uhura translate it!  </p>
       <input onChange={event => this.updateComm(event.target.value)}
          value={message|| " "}    />
       <p>Scotty: {message}</p>
@@ -55,11 +55,13 @@ componentDidMount(){
       <button onClick={() => this.translate() }>
         Translate
       </button>
-    {uhura==='visible' && <p>Uhura: {translation}</p>}
-    {uhura==='visible' && <img src={king} alt="klingon " />}
-    {translation==='noData'&& uhura==='hidden' && error==='visible'&&<p> To many requests </p> }
-    {translation==='noData'&& uhura==='hidden' && error==='visible'&&<img src={uhura_gif} alt="uhura speaking " />}
-    </div>;
+      <div id="response">
+      {uhura==='visible' && <p>Uhura: {translation}</p>}
+      {uhura==='visible' && <img src={king} alt="klingon " />}
+      {uhura==='hidden' && error==='visible'&&<p> To many requests </p> }
+      {uhura==='hidden' && error==='visible'&&<img src={uhura_gif} alt="uhura speaking " />}
+    </div>
+    </div>
 
   }
 }

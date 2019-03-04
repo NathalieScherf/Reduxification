@@ -20,7 +20,8 @@ export default function reducer(state = {}, action) {
     if (action.type ==='ERROR_MESSAGE') {
         state={...state,
             translation: action.translation,
-            error: action.error}
+            error: action.error,
+        uhura: action.uhura}
     }
     if (action.type ==='DISPLAY_TEXT') {
             state={...state,
